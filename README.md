@@ -94,13 +94,34 @@ print(len(x_test))
 ```
 ## OUTPUT:
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/15713192-5dd5-4030-87e9-c316afdb9260)
+
+
+
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/35213399-4a01-41b1-9a92-8267bc90d3f3)
+
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/175f8bc7-252b-4f6c-9cb0-f3a09f5d45f5)
+
+
+
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/7b6294e5-99cf-43a7-8dd6-dc04373e18ee)
+
+
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/4a52b76b-4394-4a70-92b6-f57e23ceb2a0)
+
+
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/dd8bad03-d56c-49f9-b2ff-f6a2981c265f)
+
+
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/e2045dd8-620c-4533-bd8a-ea00779818ef)
+
+
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/ff2a8e21-05f7-44f4-8d3e-a3777a4bef1e)
+
+
+
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/f54a2ef2-26b7-4834-857b-af0ad7a85f5c)
+
+
+
 ## RESULT
 Hence Data preprocessing in a data set downloaded from Kaggle has been performed successfully.
