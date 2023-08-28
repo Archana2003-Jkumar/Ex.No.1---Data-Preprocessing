@@ -93,6 +93,7 @@ print(x_test)
 print(len(x_test))
 ```
 ## OUTPUT:
+
 ![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/15713192-5dd5-4030-87e9-c316afdb9260)
 
 
