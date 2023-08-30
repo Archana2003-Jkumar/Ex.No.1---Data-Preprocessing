@@ -1,10 +1,11 @@
 # Ex.No.1---Data-Preprocessing
 ## AIM:
-To perform Data preprocessing in a data set downloaded from Kaggle.
 
-##REQUIPMENTS REQUIRED:
-Hardware – PCs
-Anaconda – Python 3.7 Installation / Google Colab /Jupiter Notebook
+To perform Data preprocessing in a data set downloaded from Kaggle
+
+## REQUIPMENTS REQUIRED:
+1. Hardware – PCs
+2. Anaconda – Python 3.7 Installation / Google Colab /Jupiter Notebook
 
 ## RELATED THEORETICAL CONCEPT:
 
@@ -23,106 +24,88 @@ Another aspect is that the data set should be formatted in such a way that more 
 
 
 ## ALGORITHM:
-Importing the libraries
-Importing the dataset
-Taking care of missing data
-Encoding categorical data
-Normalizing the data
-Splitting the data into test and train
+1. Importing the libraries
+2. Importing the dataset
+3. Taking care of missing data
+4. Encoding categorical data
+5. Normalizing the data
+6. Splitting the data into test and train
 
 ## PROGRAM:
 ```
- import pandas as pd
-df=pd.read_csv('data.csv')
+# Importing Libraries
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+
+#Read the dataset
+df=pd.read_csv('Churn_Modelling.csv')
 df
 
-import pandas as pd
-df=pd.read_csv("/content/data.csv")
-df.head()
-
-df.duplicated()
-df.describe()
+#Checking for null values
 df.isnull().sum()
-x=df.iloc[:, :-1].values
-print(x)
 
-y=df.iloc[:, -1].values
-print(y)
-
-from sklearn.preprocessing import MinMaxScaler
-scaler = MinMaxScaler()
-df1 = pd.DataFrame(scaler.fit_transform(df))
-print(df1)
-
-from sklearn.model_selection import train_test_split
-xtrain,ytrain,xtest,ytest=train_test_split(x,y,test_size=0.2,random_state=2)
-print(xtrain)
-print(len(xtrain))
-print(xtest)
-print(len(xtest))
-
-from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
-df1 = sc.fit_transform(df)
-print(df1)
-
-x=df.iloc[:, :-1].values
-x
-y=df.iloc[:, -1].values
-y
-print(df.isnull().sum)
-
-df.fillna(df.mean().round(1), inplace=True)
-print(df.isnull().sum())
-y=df.iloc[:, -1].values
-print(y)
-
+#Checking for dulpicated values
 df.duplicated()
-print(df['Calories'].describe())
 
-from sklearn.preprocessing import MinMaxScaler
-Scaler = MinMaxScaler()
-df1=pd.DataFrame(Scaler.fit_transform(df))
-df1
+#Dropping unwanted columns
+df.drop('RowNumber',axis=1,inplace=True)
+df.drop('CustomerId',axis=1,inplace=True)
+df.drop('Age',axis=1,inplace=True)
+df.drop('Gender',axis=1,inplace=True)
+df.drop('Surname',axis=1,inplace=True)
+df.drop('Geography',axis=1,inplace=True)
+df
 
-from sklearn.model_selection import train_test_split
-x_train, x_test ,y_train, y_test = train_test_split(x, y, test_size= 0.2)
-print(x_train)
-print(len(x_train))
-print(x_test)
-print(len(x_test))
+#Normalising using MinMaxScaler
+ms=MinMaxScaler()
+df2=pd.DataFrame(ms.fit_transform(df))
+df2
+
+#Splitting the dataset - x
+X=df2.iloc[:,:-1].values
+X
+
+#Splitting the dataset - y
+y=df2.iloc[:,-1].values
+y
+
+# Training the dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+print(X_train)
+print("X_train: ",len(X_train))
+print(X_test)
+print("Size of X_test: ",len(X_test))
+
 ```
+
 ## OUTPUT:
+### Read Dataset
+<img width="820" alt="image" src="https://github.com/Shavedha/Ex.No.1---Data-Preprocessing/assets/93427376/7f8c460a-a539-48c0-8604-90338aaf6553">
 
-![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/15713192-5dd5-4030-87e9-c316afdb9260)
+### Checking for Null values
+<img width="219" alt="image" src="https://github.com/Shavedha/Ex.No.1---Data-Preprocessing/assets/93427376/8bd296e0-ec51-408f-985b-279e2bfb5c1f">
 
+### Checking for duplicated values
+<img width="257" alt="image" src="https://github.com/Shavedha/Ex.No.1---Data-Preprocessing/assets/93427376/d2d566b9-c92b-480d-8360-ba5af2b0e8a2">
 
+### Dropping off unwanted values
+<img width="634" alt="image" src="https://github.com/Shavedha/Ex.No.1---Data-Preprocessing/assets/93427376/6d21e370-5540-4224-b011-541afa48088c">
 
-![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/35213399-4a01-41b1-9a92-8267bc90d3f3)
+### Normalised data using MinMaxScaler
+<img width="409" alt="image" src="https://github.com/Shavedha/Ex.No.1---Data-Preprocessing/assets/93427376/ad503fb4-b6e0-4b0a-a933-b5a1b04cd873">
 
-![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/175f8bc7-252b-4f6c-9cb0-f3a09f5d45f5)
+### Split values of X dataset
+<img width="527" alt="image" src="https://github.com/Shavedha/Ex.No.1---Data-Preprocessing/assets/93427376/f705d82c-cc50-4efe-8c30-d33c0e822f5c">
 
+### Split values of y dataset
+<img width="353" alt="image" src="https://github.com/Shavedha/Ex.No.1---Data-Preprocessing/assets/93427376/3ad34b40-a092-4c7a-976b-eb6383c5380f">
 
-
-![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/7b6294e5-99cf-43a7-8dd6-dc04373e18ee)
-
-
-![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/4a52b76b-4394-4a70-92b6-f57e23ceb2a0)
-
-
-![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/dd8bad03-d56c-49f9-b2ff-f6a2981c265f)
-
-
-![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/e2045dd8-620c-4533-bd8a-ea00779818ef)
-
-
-![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/ff2a8e21-05f7-44f4-8d3e-a3777a4bef1e)
-
-
-
-![image](https://github.com/Archana2003-Jkumar/Ex.No.1---Data-Preprocessing/assets/93427594/f54a2ef2-26b7-4834-857b-af0ad7a85f5c)
-
+### Training the dataset
+<img width="476" alt="image" src="https://github.com/Shavedha/Ex.No.1---Data-Preprocessing/assets/93427376/cd39c2c1-ca02-4edd-83c9-7288a328f8ae">
 
 
 ## RESULT
-Hence Data preprocessing in a data set downloaded from Kaggle has been performed successfully.
+Thus the given data is been processed successfully.
